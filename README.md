@@ -99,6 +99,8 @@ Os scripts de criação das tabelas estão disponíveis na pasta `sql_scripts/`.
 2. Importe os scripts SQL no seu banco de dados.
 3. Conecte o modelo ao Power BI, Tableau ou outra ferramenta de BI.
 
+---
+
 ##📌 Autor
 
 Guilherme – Analista de Dados | Modelagem Dimensional | BI
