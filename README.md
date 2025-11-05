@@ -105,3 +105,4 @@ Os scripts de criação das tabelas estão disponíveis na pasta `sql_scripts/`.
 
 Guilherme – Analista de Dados | Modelagem Dimensional | BI
 
+---
