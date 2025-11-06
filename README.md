@@ -62,7 +62,7 @@ Contém os dados transacionais das vendas realizadas.
 
 ---
 
-# Onde Realisei a Criação da tabela
+# Onde Realizei a Criação da tabela
 
 </div>
 <img align="right" left="80" src="https://imgur.com/oVgAn2B.png" />
