@@ -107,6 +107,7 @@ Os scripts de criação das tabelas estão disponíveis na pasta `sql_scripts/`.
 </div>
 <img align="right" left="80" src="https://imgur.com/iXCkvHS.png" />
 
+
 1. Indica o Total de Faturamento da Óptica.
 
 -`Total_Vendas = SUM(Fato_Vendas[Valor_Total])`
