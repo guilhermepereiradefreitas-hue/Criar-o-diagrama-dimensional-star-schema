@@ -101,7 +101,70 @@ Os scripts de criação das tabelas estão disponíveis na pasta `sql_scripts/`.
 
 ---
 
-##📌 Autor
+## 📐 Explicação das Medidas DAX – LOJA C&M Óptica
+
+
+</div>
+<img align="right" left="80" src="https://imgur.com/iXCkvHS.png" />
+
+1. Indica o Total de Faturamento da Óptica.
+
+-`Total_Vendas = SUM(Fato_Vendas[Valor_Total])`
+
+2.Soma a Quantidade de Produtos Vendidos, independente do valor.
+
+-`Total_Quantidade = SUM(Fato_Vendas[Quantidade])`
+
+3.Ticket médio por vendas. 
+
+-`Valor_Medio_Venda = AVERAGE(Fato_Vendas[Valor_Total])`
+
+4.Total e Descontos. 
+
+-`Total_Desconto = SUM(Fato_Vendas[Desconto])`
+
+5.Calcula o Valor medio de Descontos por Vendas.
+
+-`Desconto_Medio = AVERAGE(Fato_Vendas[Desconto])`
+
+6.Identifica a venda por categoria de Produto Que mais Gera receita.
+
+-`Vendas_Por_Categoria = 
+CALCULATE(
+    SUM(Fato_Vendas[Valor_Total]),
+    ALLEXCEPT(Dim_Produto, Dim_Produto[Categoria])
+)`
+
+7.Organiza Vendas por Vendedor de forma Individual.
+
+-`Vendas_Por_Vendedor = 
+CALCULATE(
+    SUM(Fato_Vendas[Valor_Total]),
+    ALLEXCEPT(Dim_Vendedor, Dim_Vendedor[Nome])
+)`
+
+8.Organiza as vendas por mês e ano.
+
+-`Vendas_Mensais = 
+CALCULATE(
+    SUM(Fato_Vendas[Valor_Total]),
+    ALLEXCEPT(Dim_Tempo, Dim_Tempo[Mes], Dim_Tempo[Ano])
+)`
+
+9.Mede o crescimento ou queda mês a mês.
+
+`Crescimento_Mensal = 
+VAR VendasAtual = SUM(Fato_Vendas[Valor_Total])
+VAR VendasAnterior = 
+    CALCULATE(
+        SUM(Fato_Vendas[Valor_Total]),
+        DATEADD(Dim_Tempo[Data], -1, MONTH)
+    )
+RETURN
+    DIVIDE(VendasAtual - VendasAnterior, VendasAnterior)`
+
+
+## 📌 Autor
 
 Guilherme – Analista de Dados | Modelagem Dimensional | BI
 
